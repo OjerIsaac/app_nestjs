@@ -5,9 +5,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-// import { User, Order } from './users/tables.entity';
+import { User, Order } from './users/tables.entity';
 
 @Module({
+  controllers: [AppController],
+  providers: [AppService],
   imports: [UsersModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
@@ -21,7 +23,5 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       // entities: [User, Order],
       logging: false
    }),],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}
