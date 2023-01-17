@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+// import { User, Order } from './users/tables.entity';
 
 @Module({
   imports: [UsersModule,
@@ -17,6 +18,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       database: process.env.POSTGRES_DB,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
+      // entities: [User, Order],
+      logging: false
    }),],
   controllers: [AppController],
   providers: [AppService],
