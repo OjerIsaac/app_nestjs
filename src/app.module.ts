@@ -5,8 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User, Order } from './users/tables.entity';
-// import { JwtModule } from '@nestjs/jwt';
+// import { User, Order } from './users/tables.entity';
 
 @Module({
   controllers: [AppController],
@@ -23,8 +22,7 @@ import { User, Order } from './users/tables.entity';
       synchronize: true,
       // entities: [User, Order],
       logging: false
-   }),
-  //  JwtModule.register({ secret: 'secretKey' })
+   })
   ]
 })
 export class AppModule {}

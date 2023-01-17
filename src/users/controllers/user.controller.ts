@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Put, Delete, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Body, Param, UseGuards } from '@nestjs/common';
 import { User, Order } from '../tables.entity';
 import { UserService } from '../services/user.service';
 import { JwtService } from '@nestjs/jwt';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller('api/v1')
 export class UserController {
@@ -25,4 +26,12 @@ export class UserController {
         // const token = this.jwtService.sign(payload);
         // return { token };
     }
+
+    // @Post('order')
+    // @UseGuards(AuthGuard('jwt'))
+    // async createOrder(@Body() orderData: Order): Promise<any> {
+    //     // Code to create an order here
+    //     return this.userService.create(orderData);
+    //     // return { message: 'Order created successfully' };
+    // }
 }
