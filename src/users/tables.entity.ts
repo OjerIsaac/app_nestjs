@@ -1,4 +1,4 @@
-import { Entity, Column, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, ManyToOne, OneToMany, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 
 @Entity()
 export class User {
@@ -23,6 +23,15 @@ export class User {
     @Column()
     country: string;
 
+    @Column()
+    password: string;
+
+    @CreateDateColumn()
+    created_at: Date;
+
+    @UpdateDateColumn()
+    updated_at: Date;
+
     @OneToMany(type => Order, order => order.user)
     children: Order[];
 }
@@ -37,6 +46,12 @@ export class Order {
 
     @Column()
     price: string;
+
+    @CreateDateColumn()
+    created_at: Date;
+
+    @UpdateDateColumn()
+    updated_at: Date;
 
     @ManyToOne(type => User, user => user.children)
     user: User;

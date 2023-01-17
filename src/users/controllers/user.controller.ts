@@ -13,5 +13,5 @@ export class UserController {
     @Post('auth/register')
     async register(@Body() userData: User): Promise<any> {
         return this.userService.register(userData);
-    }  
+    }
 }
