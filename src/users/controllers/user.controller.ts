@@ -1,8 +1,7 @@
 import { Controller, Get, Post, Put, Delete, Body, Param, UseGuards } from '@nestjs/common';
-import { User, Order } from '../tables.entity';
+import { User } from '../tables.entity';
 import { UserService } from '../services/user.service';
 import { JwtService } from '@nestjs/jwt';
-import { AuthGuard } from '@nestjs/passport';
 
 @Controller('api/v1')
 export class UserController {
