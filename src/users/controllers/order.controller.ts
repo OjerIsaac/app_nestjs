@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Delete, Body, Param, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Body, Param, UseGuards, Req } from '@nestjs/common';
 import { Order } from '../tables.entity';
 import { OrderService } from '../services/order.service';
 import { JwtAuthGuard } from '../auth.guard';
@@ -8,8 +8,9 @@ import { JwtAuthGuard } from '../auth.guard';
 export class OrderController {
     constructor(private readonly orderService: OrderService) {}
 
-    @Post('order')
-    async create(@Body() orderData: Order): Promise<any> {
-        return this.orderService.create(orderData);
+    @Post(':id/new-order')
+    async create(@Param('id') id, @Body() orderData: Order, @Req() req): Promise<any> {
+        // orderData.user = req.user;
+        return this.orderService.create(id, orderData);
     }
 }

@@ -24,12 +24,4 @@ export class UserController {
         // const token = this.jwtService.sign(payload);
         // return { token };
     }
-
-    // @Post('order')
-    // @UseGuards(AuthGuard('jwt'))
-    // async createOrder(@Body() orderData: Order): Promise<any> {
-    //     // Code to create an order here
-    //     return this.userService.create(orderData);
-    //     // return { message: 'Order created successfully' };
-    // }
 }
