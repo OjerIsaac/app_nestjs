@@ -1,11 +1,10 @@
 import { Controller, Get, Post, Put, Delete, Body, Param, UseGuards } from '@nestjs/common';
 import { User } from '../tables.entity';
 import { UserService } from '../services/user.service';
-import { JwtService } from '@nestjs/jwt';
 
 @Controller('api/v1')
 export class UserController {
-    constructor(private userService: UserService, private jwtService: JwtService){}
+    constructor(private userService: UserService){}
     @Get()
     index(): string {
         return "Hello there :-)";

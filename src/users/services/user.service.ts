@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Repository, FindOneOptions } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-import { User, Order } from '../tables.entity';
+import { User } from '../tables.entity';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
 
@@ -54,5 +54,10 @@ export class UserService {
             return { message: 'logged in successfully', token: token}
         }
     }
+
+    async findOne(options: FindOneOptions<User>): Promise<User> {
+        return this.userRepository.findOne(options);
+    }
+    
     
 }

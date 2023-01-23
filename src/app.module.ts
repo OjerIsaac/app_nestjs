@@ -22,7 +22,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       synchronize: true,
       // entities: [User, Order],
       logging: false
-   })
+   }),
   ]
 })
 export class AppModule {}

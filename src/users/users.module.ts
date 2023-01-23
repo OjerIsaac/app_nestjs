@@ -6,13 +6,14 @@ import { OrderController } from './controllers/order.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User, Order } from './tables.entity';
 import { JwtModule } from '@nestjs/jwt';
+import { JwtStrategy } from './auth/jwt-strategy';
 
 @Module({
     imports: [
         TypeOrmModule.forFeature([User, Order]),
-        JwtModule.register({ secret: 'secretKey' })
+        JwtModule.register({ secret: process.env.JWT_SECRET, signOptions: { expiresIn: '3600s' }, }),
     ],
-  providers: [UserService, OrderService],
+  providers: [UserService, OrderService, JwtStrategy],
   controllers: [UserController, OrderController]
 })
 export class UsersModule {}
