@@ -18,4 +18,8 @@ export class OrderService {
         console.log(orderData);  
         return await this.orderRepository.save(orderData);
     }
+
+    async  findAll(): Promise<any[]> {
+        return await this.orderRepository.find();
+    }
 }

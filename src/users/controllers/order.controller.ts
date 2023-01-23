@@ -13,4 +13,10 @@ export class OrderController {
         // orderData.user = req.user;
         return this.orderService.create(id, orderData);
     }
+
+    @Get('fetch-order')
+    async fetch(@Req() req): Promise<any> {
+        // orderData.user = req.user;
+        return this.orderService.findAll();
+    }
 }
