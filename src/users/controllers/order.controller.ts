@@ -24,4 +24,9 @@ export class OrderController {
     async findOne(@Param('id') id): Promise<Order> {
         return this.orderService.findOne(id);
     }
+
+    @Put(':id/update-order')
+    async update(@Param('id') id, @Body() orderData: Order): Promise<Order> {
+        return await this.orderService.updateOrder(id, orderData);
+    }
 }
