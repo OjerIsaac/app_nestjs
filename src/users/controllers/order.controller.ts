@@ -19,4 +19,9 @@ export class OrderController {
         // orderData.user = req.user;
         return this.orderService.findAll();
     }
+
+    @Get(':id/fetch-single')
+    async findOne(@Param('id') id): Promise<Order> {
+        return this.orderService.findOne(id);
+    }
 }

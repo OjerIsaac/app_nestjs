@@ -1,5 +1,5 @@
-import { Injectable } from '@nestjs/common';
-import { Repository } from 'typeorm';
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { Repository, FindOneOptions } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Order, User } from '../tables.entity';
 
@@ -21,5 +21,14 @@ export class OrderService {
 
     async  findAll(): Promise<any[]> {
         return await this.orderRepository.find();
+    }
+
+    async findOne(id: number): Promise<Order> {
+        const options: FindOneOptions = { where: { id: id }};
+        const record = await this.orderRepository.findOne(options);
+        if (!record) {
+            throw new NotFoundException('Record not found');
+        }
+        return record;
     }
 }
