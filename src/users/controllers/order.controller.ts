@@ -29,4 +29,10 @@ export class OrderController {
     async update(@Param('id') id, @Body() orderData: Order): Promise<Order> {
         return await this.orderService.updateOrder(id, orderData);
     }
+
+    @Delete(':id/delete-order')
+    async delete(@Param('id') id): Promise<any> {
+        await this.orderService.deleteOrder(id);
+        return { success: true, message: 'Order has been deleted' };
+    }
 }

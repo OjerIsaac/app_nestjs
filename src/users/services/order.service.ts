@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { Repository, FindOneOptions,  UpdateResult } from 'typeorm';
+import { Repository, FindOneOptions } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Order, User } from '../tables.entity';
 
@@ -41,5 +41,10 @@ export class OrderService {
         orderData.id = id;
         await this.orderRepository.update(order.id, orderData);
         return orderData;
+    }
+
+    async deleteOrder(id: number): Promise<void> {
+        const result = await this.orderRepository.delete(id);
+        if(!result.affected) throw new NotFoundException(`Order with ID ${id} not found`);
     }
 }
