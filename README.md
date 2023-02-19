@@ -1,5 +1,5 @@
-# JUNIOR BACKEND DEVELOPER ASSESSMENT
-This is a simple CRUD API with login and registration system powered by Nodejs, Nextjs and TS
+# NESTJS CRUD WITH LOGIN & REGISTRATION - JWT TOKEN AUTHORIZATION
+This is a simple CRUD API with login and registration system powered by Nodejs, Nestjs and TS
 
 ## Requirements
 - NodeJS runtime
