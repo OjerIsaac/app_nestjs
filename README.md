@@ -44,3 +44,18 @@ PAYLOAD DATA
     "password": "password"
 }
 ```
+
+### Login User
+
+POST
+```shell
+http://localhost:3000/api/v1/auth/login
+```
+PAYLOAD DATA
+
+```shell
+{
+    "email": "isaac_001@gmail.com",
+    "password": "password"
+}
+```
