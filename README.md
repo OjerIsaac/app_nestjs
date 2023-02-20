@@ -59,3 +59,18 @@ PAYLOAD DATA
     "password": "password"
 }
 ```
+
+### Add an order
+
+POST
+```shell
+http://localhost:3000/api/v1/3/new-order
+```
+PAYLOAD DATA
+
+```shell
+{
+    "orderName": "indomie",
+    "price": "200"
+}
+```
