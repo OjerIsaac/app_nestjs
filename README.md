@@ -24,5 +24,23 @@ This is a simple CRUD API with login and registration system powered by Nodejs, 
 - Run the server in dev env
 - `npm run start:dev`
 
-## Documentation link
-- The endpoints for test of the service are provided in the [Postman Documentation](https://documenter.getpostman.com/view/25225100/2s8ZDR96Mv).
+## Endpoints.
+### Register User
+
+POST
+```shell
+http://localhost:3000/api/v1/auth/register
+```
+PAYLOAD DATA
+
+```shell
+{
+    "firstname": "isaac",
+    "lastname": "ojerumu",
+    "email": "isaac_001@gmail.com",
+    "phone": "080100000000",
+    "city": "FCT",
+    "country": "Nigeria",
+    "password": "password"
+}
+```
