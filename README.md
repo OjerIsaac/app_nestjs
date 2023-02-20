@@ -81,3 +81,10 @@ GET
 ```shell
 http://localhost:3000/api/v1/fetch-order
 ```
+
+### Fetch single orders
+
+GET
+```shell
+http://localhost:3000/api/v1/20/fetch-single
+```
