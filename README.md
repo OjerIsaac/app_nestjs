@@ -103,3 +103,10 @@ PAYLOAD DATA
     "price": "500"
 }
 ```
+
+### Delete an order
+
+DELETE
+```shell
+http://localhost:3000/api/v1/3/delete-order
+```
