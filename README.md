@@ -88,3 +88,18 @@ GET
 ```shell
 http://localhost:3000/api/v1/20/fetch-single
 ```
+
+### Update an order
+
+PUT
+```shell
+http://localhost:3000/api/v1/20/update-order
+```
+PAYLOAD DATA
+
+```shell
+{
+    "orderName": "indomie",
+    "price": "500"
+}
+```
