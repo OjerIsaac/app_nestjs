@@ -74,3 +74,10 @@ PAYLOAD DATA
     "price": "200"
 }
 ```
+
+### Fetch orders
+
+GET
+```shell
+http://localhost:3000/api/v1/fetch-order
+```
