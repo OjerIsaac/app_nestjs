@@ -10,7 +10,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 @Module({
   controllers: [AppController],
   providers: [AppService],
-  imports: [UsersModule,
+  imports: [
+    UsersModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: process.env.POSTGRES_HOST,
@@ -21,8 +22,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
       // entities: [User, Order],
-      logging: false
-   }),
-  ]
+      logging: false,
+    }),
+  ],
 })
 export class AppModule {}
